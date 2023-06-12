@@ -24,5 +24,3 @@ class Solution(object):
 ```
 ### Solution description:
 ### The first for loop creates a dictionary that counts the number of times a number appears in the array. The second for loop creates a list of lists where the index of the list is the number of times a number appears in the array. The third for loop iterates through the list of lists from the end and appends the numbers to the result list. The if statement checks if the length of the result list is greater than or equal to k and if it is, it returns the result list.
-<br>
-### 
