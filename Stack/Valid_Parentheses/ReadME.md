@@ -32,5 +32,6 @@ class Solution2(object):
             else:
                 stack.append(c)
         return True if not stack else False
-
 ```
+
+### For this easy, I've come up with two solutions. The first one goes faster than the second one as it doesn't need to go check the dictionnary for the corresponding parentheses everytime it encounters one. However, in a real job environment, the second solution is more prevalent as it puts labels to variables, and improves the stability/scalability of the code.
