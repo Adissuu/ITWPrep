@@ -1,6 +1,6 @@
 # Evaluate reverse polish notation
 
-## 
+## You are given an array of strings tokens that represents an arithmetic expression in a Reverse Polish Notation.
 
 ```
 # Time complexity: O(n)
@@ -23,3 +23,5 @@ class Solution(object):
                     stack.append(int(float(n2)/n1))
         return stack.pop()
 ```
+
+###  Verify if the element is an operation, and if so, pop the last two elements and perform the operation. Straightforward.
