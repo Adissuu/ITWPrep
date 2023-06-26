@@ -14,4 +14,4 @@ class Solution(object):
         return [l+1, r+1]
 ```
 
-#### To see it in a more optimized way, since that array is already sorted, we can simply use the check of the sum. If it is bigger than the target number, reduce right endpoint. If not, increase left endpoint.
+#### To see it in a more optimized way, since that array is already sorted, we can simply use the check of the sum. If it is bigger than the target number, reduce right endpoint. If not, increase left endpoint. 
