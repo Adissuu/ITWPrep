@@ -10,4 +10,4 @@ class Solution(object):
         return len(s.split()[-1])
 ```
 
-#### 
+#### Take the last word with s.split[-1], and return its length.
