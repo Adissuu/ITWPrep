@@ -1,8 +1,11 @@
 # Time complexity: O(n)
 # Space complexity: O(n)
+from tkinter.tix import ListNoteBook
+
+
 class Solution:
     def addTwoNumbers(self, l1, l2):
-        dummy = ListNode()
+        dummy = ListNoteBook()
         cur = dummy
 
         carry = 0
