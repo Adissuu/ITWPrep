@@ -27,7 +27,7 @@ class Solution(object):
 # Time complexity: O(n)
 # Space complexity: O(1)
 class Solution:
-    def hasCycle(self, head: ListNode) -> bool:
+    def hasCycle(self, head) -> bool:
         slow, fast = head, head
 
         while fast and fast.next:
