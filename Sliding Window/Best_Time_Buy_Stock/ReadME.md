@@ -7,7 +7,18 @@
 ### Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
 
 ```
+class Solution(object):
+    def maxProfit(self, prices):
+        buy, sell, profit = 0, 1, 0
 
+        while sell < len(prices):
+            if prices[sell] > prices[buy]:
+                curr = prices[sell] - prices[buy]
+                profit = max(profit, curr)
+            else:
+                buy = sell 
+            sell += 1
+        return profit
 ```
 
-####
+#### If the sell price is higher than the buy price, do the actual calculation, else it means that we found a lower price, and it will be the new buy. Move the sell anyways.
