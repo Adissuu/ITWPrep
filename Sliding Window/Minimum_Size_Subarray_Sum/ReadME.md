@@ -22,7 +22,6 @@ class Solution(object):
                 left += 1
             right += 1
         return 0 if minimum == maximum else minimum
-
 ```
 
 #### Find the shortest subarray in the given array whose sum is equal to or greater than the target value by using two pointers that expand the window by moving the right pointer, finds the minimum length by adjusting the left pointer, and keeps track of the smallest length encountered so far.

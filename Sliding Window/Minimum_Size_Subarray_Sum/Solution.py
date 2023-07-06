@@ -1,14 +1,16 @@
+# Time Complexity: O(nlogn)
+# Space Complexity: O(1)
 class Solution(object):
-    def maxProfit(self, prices):
-        if len(prices) < 2:
-            return 0
-        buy, sell, profit = 0, 1, 0
+    def minSubArrayLen(self, target, nums):
+        left, right, _sum = 0, 0, 0
+        maximum = 1000000
+        minimum = maximum
 
-        while sell < len(prices):
-            if prices[sell] > prices[buy]:
-                curr = prices[sell] - prices[buy]
-                profit = max(profit, curr)
-            else:
-                buy = sell
-            sell += 1
-        return profit
+        while right < len(nums):
+            _sum += nums[right]
+            while _sum >= target:
+                minimum = min(minimum, right - left + 1)
+                _sum -= nums[left]
+                left += 1
+            right += 1
+        return 0 if minimum == maximum else minimum
