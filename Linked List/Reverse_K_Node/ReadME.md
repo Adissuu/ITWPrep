@@ -1,42 +1,43 @@
-# Merge K Lists
+# Reverse k list
 
-### You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
+### Given the head of a linked list, reverse the nodes of the list k at a time, and return the modified list.
 
-### Merge all the linked-lists into one sorted linked-list and return it.
+### k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes, in the end, should remain as it is.
+
+### You may not alter the values in the list's nodes, only nodes themselves may be changed.
 
 
 ```
-class Solution:
-    def mergeKLists(self, lists):
-        if not lists or len(lists) == 0:
-            return None
+class Solution(object):
+    def reverseKGroup(self, head, k):
+        dummy = ListNode(0, head)
+        prevGr = dummy
+        
+        
+        while True:
+            kth = self.getKthNode(prevGr, k)
+            if not kth:
+                break
+            nextGr = kth.next
 
-        while len(lists) > 1:
-            mergedLists = []
-            for i in range(0, len(lists), 2):
-                l1 = lists[i]
-                l2 = lists[i + 1] if (i + 1) < len(lists) else None
-                mergedLists.append(self.mergeList(l1, l2))
-            lists = mergedLists
-        return lists[0]
-
-    def mergeList(self, l1, l2): # Merge two lists
-        dummy = ListNode()
-        tail = dummy
-
-        while l1 and l2:
-            if l1.val < l2.val:
-                tail.next = l1
-                l1 = l1.next
-            else:
-                tail.next = l2
-                l2 = l2.next
-            tail = tail.next
-        if l1:
-            tail.next = l1
-        if l2:
-            tail.next = l2
+            prev, current = nextGr, prevGr.next
+            while current != nextGr:
+                temp = current.next
+                current.next = prev
+                prev = current
+                current = temp
+            
+            temp = prevGr.next
+            prevGr.next = kth
+            prevGr = temp
         return dummy.next
+
+    def getKthNode(self, head, k):
+        while head and k > 0:
+            head = head.next
+            k -= 1
+        return head
+        
 ```
 
-#### In this problem, we need a solution created in the Merge_Linked_List folder. We make jumps of 2 each time, and merge the two lists we're at.
+#### 
