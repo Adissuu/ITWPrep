@@ -1,8 +1,8 @@
 # Longest Repeating Character Replacement
 
-### Given an array of positive integers nums and a positive integer target, return the minimal length of a 
-subarray
- whose sum is greater than or equal to target. If there is no such subarray, return 0 instead.
+### You are given a string s and an integer k. You can choose any character of the string and change it to any other uppercase English character. You can perform this operation at most k times.
+
+### Return the length of the longest substring containing the same letter you can get after performing the above operations.
 
 ```
 # Time Complexity: O(n)
@@ -26,4 +26,4 @@ class Solution(object):
 
 ```
 
-#### Find the shortest subarray in the given array whose sum is equal to or greater than the target value by using two pointers that expand the window by moving the right pointer, finds the minimum length by adjusting the left pointer, and keeps track of the smallest length encountered so far.
+#### For the length of the window, keep a count of letters in it. For all letters, add the next letter to count, and if the range minus the maximum count of letteers in the set is bigger than k, move the left pointer and remove the letter. Return the maxLength. 
